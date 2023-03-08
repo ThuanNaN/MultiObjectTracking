@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import time
 import torch
+import random
 import torch.backends.cudnn as cudnn
 from models.experimental import attempt_load
 from utils.datasets import letterbox
@@ -89,8 +90,8 @@ def detect(dict_params, model, stride, imgsz, half, image):
 
 
 dict_params = {
-    "device": 'cpu',
-    "weights": "./ckpt/yolov7.pt",
+    "device": '0',
+    "weights": "./ckpt/yolov7-tiny.pt",
     "img_size": 640,
     "classes": None,
 
@@ -115,9 +116,10 @@ dict_params = {
 model, stride, imgsz, half = load_model(dict_params["weights"], dict_params["device"], dict_params["img_size"], dict_params["trace"])
 
 class_names = model.module.names if hasattr(model, 'module') else model.names
-colors = [(255, 0, 0), (0, 255, 0), (0, 0,255)]
+names = model.module.names if hasattr(model, 'module') else model.names
+colors = [[random.randint(0, 255) for _ in range(3)] for _ in names]
 
-vid_path = "./trafic.mp4"
+vid_path = "./video/trafic.mp4"
 vid = cv2.VideoCapture(vid_path)
 
 prev_frame_time = 0
