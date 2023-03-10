@@ -6,3 +6,16 @@
 
 ## 2. Object Matching
 ### 2.1 SORT
+
+## 3. Usage
+```
+pip install -r requirements.txt
+python detect_and_track.py
+```
+
+
+
+## 4. Features
+### 4.1 Apply Yolo v8 for object detection
+### 4.2 Apply StrongSORT for object matching
+
