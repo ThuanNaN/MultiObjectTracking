@@ -2,10 +2,12 @@
 
 ## 1. Object detection
 ### 1.1 Yolo v7
+https://github.com/WongKinYiu/yolov7
 
 
 ## 2. Object Matching
 ### 2.1 SORT
+https://github.com/abewley/sort
 
 ## 3. Usage
 ```
@@ -16,6 +18,6 @@ python detect_and_track.py
 
 
 ## 4. Features
-### 4.1 Apply Yolo v8 for object detection
-### 4.2 Apply StrongSORT for object matching
+- [ ] Apply Yolo v8 for object detection
+- [ ] Apply StrongSORT for object matching
 
